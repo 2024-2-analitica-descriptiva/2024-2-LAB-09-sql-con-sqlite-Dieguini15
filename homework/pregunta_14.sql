@@ -43,4 +43,27 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 --  
-
+-- SELECT
+--     K0,
+--     AVG(c12) AS promedio_c12
+-- FROM
+--     tbl1
+-- WHERE 
+--     c13 > 400
+-- GROUP BY
+--     K0;
+SELECT 
+    tbl1.K0,
+    ROUND(AVG(tbl2.c21), 6) AS "avg(c21)"
+FROM 
+    tbl1
+JOIN 
+    tbl2
+ON 
+    tbl1.K1 = tbl2.K1
+WHERE 
+    tbl1.c13 > 400
+GROUP BY 
+    tbl1.K0
+ORDER BY 
+    tbl1.K0;
