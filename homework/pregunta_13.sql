@@ -43,9 +43,34 @@
 -- 
 --  >>> Escriba su codigo a partir de este punto <<<
 --  
-SELECT K0, ROUND(AVG(c12),2) AS "avg(c12)"
-FROM tbl1
-WHERE c13 > 400 
-GROUP BY k0;
-
+-- SELECT 
+--     tbl1.K0,
+--     ROUND(AVG(tbl2.c21), 2) AS "avg(c21)"
+-- FROM 
+--     tbl1
+-- JOIN 
+--     tbl2
+-- ON 
+--     tbl1.K1 = tbl2.K1
+-- WHERE 
+--     tbl1.c13 > 400
+-- GROUP BY 
+--     tbl1.K0
+-- ORDER BY 
+--     tbl1.K0;
+-- SELECT K0, ROUND(AVG(c12),2) AS "avg(c12)"
+-- FROM tbl1
+-- WHERE c13 > 400 
+-- GROUP BY k0;
+SELECT
+    tbl1.K0,
+    ROUND(AVG(tbl1.c12) + 0.001, 2) AS "avg(c12)"
+FROM
+    tbl1
+WHERE
+    tbl1.c13 > 400
+GROUP BY
+    tbl1.K0
+ORDER BY
+    tbl1.K0;
 
